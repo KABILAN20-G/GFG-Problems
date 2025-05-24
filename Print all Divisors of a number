@@ -1,0 +1,21 @@
+import java.util.List;
+import java.util.ArrayList;
+
+public class Solution {
+    public static List<Integer> printDivisors(int n) {
+        List<Integer> lower = new ArrayList<>();
+        List<Integer> upper = new ArrayList<>();
+
+        for (int i = 1; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                lower.add(i);
+                if (i != n / i) {
+                    upper.add(0, n / i); 
+                }
+            }
+        }
+
+        lower.addAll(upper); 
+        return lower;
+    }
+}
