@@ -6,7 +6,7 @@ class Solution {
 }
 
 //Binary Search 
-class Solution {
+class Solution { 
     long floorSqrt(long n) {
         long low = 1, high = n, ans = 0;
 
