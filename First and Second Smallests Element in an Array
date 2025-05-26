@@ -1,0 +1,28 @@
+class Solution {
+    public int[] minAnd2ndMin(int arr[]) {
+       
+       int small=arr[0];
+       int ssmall= Integer.MAX_VALUE;
+       
+       for(int i=1;i<arr.length;i++)
+       {
+           if(arr[i]<small)
+           {
+               ssmall=small;
+               small=arr[i];
+           }
+           
+           else if(arr[i]!=small  && arr[i]<ssmall)
+           {
+               ssmall=arr[i];
+              
+           }
+       }
+       
+     if (ssmall == Integer.MAX_VALUE) {
+            return new int[]{-1, -1}; 
+        }
+
+        return new int[]{small, ssmall};
+    }
+}
