@@ -1,0 +1,38 @@
+// optimal solution
+
+class Solution {
+    public static boolean checkEqual(int[] a, int[] b) {
+      if (a.length != b.length)
+            return false;
+
+        Map<Integer, Integer> freqA = new HashMap<>();
+        Map<Integer, Integer> freqB = new HashMap<>();
+
+        for (int num : a) {
+            freqA.put(num, freqA.getOrDefault(num, 0) + 1);
+        }
+
+        for (int num : b) {
+            freqB.put(num, freqB.getOrDefault(num, 0) + 1);
+        }
+
+        return freqA.equals(freqB);
+    }
+}
+
+
+//normal solution
+
+import java.util.Arrays;
+
+class Solution {
+    public static boolean checkEqualArrays(int[] a, int[] b) {
+        if (a.length != b.length)
+            return false;
+
+        Arrays.sort(a);
+        Arrays.sort(b);
+
+        return Arrays.equals(a, b);
+    }
+}
