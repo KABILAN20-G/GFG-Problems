@@ -18,3 +18,27 @@ class Solution {
     
     }
 }
+
+
+
+//Hash Set
+
+class GfG {
+
+    static boolean isSubset(int[] a,int[] b) {
+        // Create a hash set and insert all elements of a
+        Set<Integer> hashSet = new HashSet<>();
+        for (int num : a) {
+            hashSet.add(num);
+        }
+
+        // Check each element of b in the hash set
+        for (int num : b) {
+            if (!hashSet.contains(num)) {
+                return false;
+            }
+        }
+
+        // If all elements of b are found in the hash set
+        return true;
+    }
