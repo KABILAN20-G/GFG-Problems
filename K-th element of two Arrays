@@ -1,0 +1,20 @@
+class Solution {
+    public int kthElement(int a[], int b[], int k) {
+        
+       ArrayList<Integer> list=new ArrayList<>();
+       
+       for(int i=0;i<a.length;i++)
+       {
+           list.add(a[i]);
+       }
+       
+       for(int j=0;j<b.length;j++)
+       {
+           list.add(b[j]);
+       }
+        
+        Collections.sort(list);
+        
+        return list.get(k-1);
+    }
+}
